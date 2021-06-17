@@ -1,4 +1,3 @@
-import 'package:engelli_uygulama/ui/login_page.dart';
 import 'package:engelli_uygulama/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

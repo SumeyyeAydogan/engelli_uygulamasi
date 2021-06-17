@@ -10,16 +10,20 @@ class MyTextForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: Get.size.width*0.8,
-      child: TextFormField(
-        decoration: InputDecoration(
-          hintText: hintText,
-          border: OutlineInputBorder(
+    return Column(
+      children: [
+        Container(
+          width: Get.size.width*0.8,
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: hintText,
+              border: OutlineInputBorder(
+              ),
+            ),
+            onSaved: onSaved,
           ),
         ),
-        onSaved: onSaved,
-      ),
+      ],
     );
   }
 }

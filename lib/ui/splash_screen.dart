@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:engelli_uygulama/ui/login_page.dart';
+import 'package:engelli_uygulama/ui/auth/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
