@@ -1,6 +1,7 @@
 import 'package:engelli_uygulama/config/widgets/close_keyboard.dart';
 import 'package:engelli_uygulama/config/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class AddEvent extends StatefulWidget {
@@ -11,16 +12,16 @@ class AddEvent extends StatefulWidget {
 }
 
 class _AddEventState extends State<AddEvent> {
-
   var _sizedBox = SizedBox(
-  height: Get.height*0.02,
+    height: Get.height * 0.02,
   );
 
   @override
   Widget build(BuildContext context) {
     return CloseKeyboard(
       child: Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         // text forma tıkladığımızda yukarı doğru çıkmasını sağlıyor
         child: Scaffold(
           resizeToAvoidBottomInset: false,
@@ -34,34 +35,38 @@ class _AddEventState extends State<AddEvent> {
               child: Column(
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey.shade300,
-                    ),
-                    height: 300,
-                    width: double.infinity,
-                    child: Icon(
-                      Icons.add_circle,
-                      color: Colors.grey.shade700,
-                    ),
-                  ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Color(0xffe8f5e9),
+                      ),
+                      height: 300,
+                      width: double.infinity,
+                      child: IconButton(
+                        icon: FaIcon(FontAwesomeIcons.plus),
+                        onPressed: () {},
+                      )),
                   _sizedBox,
                   TextFormField(
                     decoration: InputDecoration(
-                        hintText: 'Başlık', border: OutlineInputBorder()),
+                      hintText: 'Başlık',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(6)),
+                    ),
                   ),
                   _sizedBox,
                   TextFormField(
                     maxLines: 5,
                     decoration: InputDecoration(
-                        hintText: 'Açıklama', border: OutlineInputBorder()),
+                      hintText: 'Açıklama',
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
+                    ),
                   ),
                   _sizedBox,
                   Container(
                     width: Get.width,
                     height: Get.height * 0.07,
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Colors.green),
+                      style: ElevatedButton.styleFrom(primary: Color(0xffffa000)),
                       onPressed: () {},
                       child: Text(
                         'Tarih Seçiniz',
@@ -74,6 +79,7 @@ class _AddEventState extends State<AddEvent> {
                     width: Get.width,
                     height: Get.height * 0.07,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Color(0xffc67100)),
                       onPressed: () {},
                       child: Text(
                         'Kaydet',
