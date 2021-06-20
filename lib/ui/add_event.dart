@@ -24,11 +24,18 @@ class _AddEventState extends State<AddEvent> {
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         // text forma tıkladığımızda yukarı doğru çıkmasını sağlıyor
         child: Scaffold(
+          backgroundColor: Color(0xfff5f0e1),
           resizeToAvoidBottomInset: false,
+
           // text forma tıkladığımızda yukarı doğru çıkmasını sağlıyor
           appBar: AppBar(
-
-            title: Text('Etkinlik Ekle'),
+            iconTheme: IconThemeData(color: Color(0xff1e3d59)),
+            elevation: 0,
+            backgroundColor: Color(0xfff5f0e1),
+            title: Text('Etkinlik Ekle',style: TextStyle(color: Color(0xff1e3d59)),),
+            actions: [
+              IconButton(icon: FaIcon(FontAwesomeIcons.check,color: Color(0xff1e3d59),), onPressed: (){})
+            ],
           ),
           body: SingleChildScrollView(
             child: Padding(
@@ -36,58 +43,88 @@ class _AddEventState extends State<AddEvent> {
               child: Column(
                 children: [
                   Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Color(0xffe8f5e9),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
+                    height: 300,
+                    width: double.infinity,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Image.asset(
+                        'assets/camera.png',
+                        width: Get.width * 0.07,
                       ),
-                      height: 300,
-                      width: double.infinity,
-                      child: IconButton(
-                        icon: FaIcon(FontAwesomeIcons.plus),
-                        onPressed: () {},
-                      )),
+                    ),
+                  ),
                   _sizedBox,
                   TextFormField(
                     decoration: InputDecoration(
-                      hintText: 'Başlık',
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6)),
-                    ),
+                        hintText: 'Başlık',
+                        hintStyle: TextStyle(fontSize: 13,color: Color(0xff1e3d59)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                            borderSide: BorderSide(
+                                color: Colors.grey.shade400, width: 1)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                            borderSide: BorderSide(
+                                color: Colors.grey.shade400, width: 1))),
+                  ),
+                  _sizedBox,
+                  TextFormField(
+                    decoration: InputDecoration(
+                        hintText: 'Konum',
+                        hintStyle: TextStyle(fontSize: 13,color: Color(0xff1e3d59)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                            borderSide: BorderSide(
+                                color: Colors.grey.shade400, width: 1)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                            borderSide: BorderSide(
+                                color: Colors.grey.shade400, width: 1))),
                   ),
                   _sizedBox,
                   TextFormField(
                     maxLines: 5,
                     decoration: InputDecoration(
-                      hintText: 'Açıklama',
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
-                    ),
+                        hintText: 'Açıklama',
+                        hintStyle: TextStyle(fontSize: 13,color: Color(0xff1e3d59)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                            borderSide: BorderSide(
+                                color: Colors.grey.shade400, width: 1)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                            borderSide: BorderSide(
+                                color: Colors.grey.shade400, width: 1))),
                   ),
                   _sizedBox,
                   Container(
                     width: Get.width,
                     height: Get.height * 0.07,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Color(0xffffa000)),
-                      onPressed: () {},
-                      child: Text(
-                        'Tarih Seçiniz',
-                        style: TextStyle(fontSize: 24),
-                      ),
+                    decoration: BoxDecoration(
+
+                        color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(7,9),
+                          color: Colors.grey.shade400,
+                          spreadRadius: 1,
+                          blurRadius: 7
+                        )
+                      ]
                     ),
+                    child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Tarih Seçiniz',
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold,color: Color(0xff1e3d59)),
+                        ),),
                   ),
                   _sizedBox,
-                  Container(
-                    width: Get.width,
-                    height: Get.height * 0.07,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Color(0xffc67100)),
-                      onPressed: () {},
-                      child: Text(
-                        'Kaydet',
-                        style: TextStyle(fontSize: 24),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

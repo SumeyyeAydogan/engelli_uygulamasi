@@ -1,9 +1,11 @@
+import 'package:engelli_uygulama/config/color.dart';
 import 'package:engelli_uygulama/config/tabs/bottom_navigation_bar_item.dart';
 import 'package:engelli_uygulama/ui/home_page.dart';
 import 'package:engelli_uygulama/ui/message_page.dart';
 import 'package:engelli_uygulama/ui/profile_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 enum TabItem { HomePage, MessagePage ,ProfilPage }
 
@@ -62,16 +64,17 @@ class _TabsState extends State<Tabs>
           currentIndex: widget.currentTab1,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              backgroundColor: Color(0xffFE8106),
+              icon: FaIcon
+                (FontAwesomeIcons.home,size: 20,color: currentIndex == 0 ? lacivert : Colors.grey,),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.message),
-              backgroundColor: Color(0xffFE8106),
+              icon: Icon
+                (Icons.messenger,size: 20,color: currentIndex == 1 ? lacivert : Colors.grey,),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              backgroundColor: Color(0xffFE8106),
+              icon: FaIcon
+                (FontAwesomeIcons.solidUser,size: 20,color: currentIndex == 2 ? lacivert : Colors.grey,),
+
             ),
           ],
           onTap: (index) {

@@ -1,3 +1,7 @@
+import 'package:engelli_uygulama/ui/add_comment.dart';
+import 'package:engelli_uygulama/ui/comments.dart';
+import 'package:engelli_uygulama/ui/edit_profile.dart';
+import 'package:engelli_uygulama/ui/person_events.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -25,23 +29,36 @@ class _ProfilePageState extends State<ProfilePage> {
         title: Text('Profil'),
         actions: [
           PopupMenuButton(
+            onSelected: (value){
+              switch(value){
+                case '1': Get.to(()=>Comments());
+                break;
+                case '2': Get.to(()=>AddComment());
+                break;
+                case '3': Get.to(()=>PersonEvents());
+                break;
+                case '4': Get.to(()=>EditProfile());
+                break;
+                default: Get.to(()=>ProfilePage());
+              }
+            },
             itemBuilder: (BuildContext context) {
               return [
                 PopupMenuItem(
                   child: Text('Yorumlar'),
-                  value: 'AA',
+                  value: '1',
                 ),
                 PopupMenuItem(
-                  child: Text('Gideceğim Etkinlikler'),
-                  value: 'bb',
+                  child: Text('Yorum Yap'),
+                  value: '2',
                 ),
                 PopupMenuItem(
                   child: Text('Oluşturduğum Etkinlikler'),
-                  value: 'bb',
+                  value: '3',
                 ),
                 PopupMenuItem(
                   child: Text('Profilimi Düzenle'),
-                  value: 'bb',
+                  value: '4'
                 ),
               ];
             },
@@ -84,7 +101,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           EdgeInsets.symmetric(horizontal: Get.width * 0.05),
                       child: Text(
                         'Paragraf, herhangi bir yazının bir satır başından öteki satır başına kadar olan bölümüne denir. Daha geniş bir ifadeyle, paragraf "bir duyguyu, bir düşünceyi, bir isteği, bir durumu, bir öneriyi, olayın bir yönünü, yalnızca bir yönüyle anlatım tekniklerin­den ve düşünceyi geliştirme yollarından yararlanarak anlatan yazı türüdür. Kelimeler cümleleri, cümleler paragrafları, paragraflar da yazıları oluşturur.',
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 12,letterSpacing: 1),
                       ),
                     ),
                   ],

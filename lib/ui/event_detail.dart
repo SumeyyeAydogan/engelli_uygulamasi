@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class EventDetail extends StatefulWidget {
@@ -72,6 +73,7 @@ class _EventDetailState extends State<EventDetail> {
                 ),
                 Text(
                   'Paragraf, herhangi bir yazının bir satır başından öteki satır başına kadar olan bölümüne denir. Daha geniş bir ifadeyle, paragraf "bir duyguyu, bir düşünceyi, bir isteği, bir durumu, bir öneriyi, olayın bir yönünü, yalnızca bir yönüyle anlatım tekniklerin­den ve düşünceyi geliştirme yollarından yararlanarak anlatan yazı türüdür. Kelimeler cümleleri, cümleler paragrafları, paragraflar da yazıları oluşturur. Paragraf bir yazının küçültülmüş bir örneğidir. Bu yönüyle yapı bakımından bir yazıya benzer.',
+                  style: TextStyle(letterSpacing: 1),
                 ),
                 SizedBox(
                   height: Get.height * 0.02,
@@ -87,25 +89,33 @@ class _EventDetailState extends State<EventDetail> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('7/7 attending'),
+                      Row(
+                        children: [
+                          FaIcon(FontAwesomeIcons.check,color:Color(0xffffc13b) ,),
+                          SizedBox(width: 10,),
+                          Text('7/7 attending'),
+                        ],
+                      ),
                       Row(
                         children: [
                           ListView.builder(
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             itemCount: 3,
-                            itemBuilder: (context, index) => CircleAvatar(
-                              radius: 20,
-                              backgroundImage: CachedNetworkImageProvider(
-                                'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG98ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
+                            itemBuilder: (context, index) => Container(
+                              margin: EdgeInsets.only(right: 5),
+                              child: CircleAvatar(
+                                radius: 20,
+                                backgroundImage: CachedNetworkImageProvider(
+                                  'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG98ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
+                                ),
                               ),
                             ),
                           ),
                           CircleAvatar(
                             radius: 20,
-                            backgroundImage: CachedNetworkImageProvider(
-                              'https://thumbs.dreamstime.com/b/addition-plus-sign-icon-illustration-graphic-design-83211720.jpg',
-                            ),
+                            backgroundColor: Color(0xffffc13b),
+                            child: Container(margin: EdgeInsets.only(bottom: 5),child: Text('+3',style: TextStyle(color: Colors.black),),),
                           ),
                         ],
                       ),

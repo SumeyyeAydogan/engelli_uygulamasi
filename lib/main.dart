@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xff00a97d),
         fontFamily: GoogleFonts.capriola().fontFamily,
       ),
-      home: Tabs(currentTab1: 0,),
+      home: SplashScreen(),
     );
   }
 }
