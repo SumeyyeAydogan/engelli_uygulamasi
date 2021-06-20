@@ -5,8 +5,9 @@ class MyTextForm extends StatelessWidget {
 
   final hintText;
   final onSaved;
+  final icon;
 
-  const MyTextForm({Key key, this.hintText,this.onSaved}) : super(key: key);
+  const MyTextForm({Key key, this.hintText,this.onSaved,this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +18,8 @@ class MyTextForm extends StatelessWidget {
           child: TextFormField(
             decoration: InputDecoration(
               hintText: hintText,
-              border: OutlineInputBorder(
-              ),
+              hintStyle: TextStyle(color: Colors.grey.shade600,fontSize: 13),
+              prefixIcon: Icon(icon,size: 16)
             ),
             onSaved: onSaved,
           ),

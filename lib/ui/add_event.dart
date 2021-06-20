@@ -27,6 +27,7 @@ class _AddEventState extends State<AddEvent> {
           resizeToAvoidBottomInset: false,
           // text forma tıkladığımızda yukarı doğru çıkmasını sağlıyor
           appBar: AppBar(
+
             title: Text('Etkinlik Ekle'),
           ),
           body: SingleChildScrollView(

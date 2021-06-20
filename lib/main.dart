@@ -1,3 +1,5 @@
+import 'package:engelli_uygulama/tabs.dart';
+import 'package:engelli_uygulama/ui/home_page.dart';
 import 'package:engelli_uygulama/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,9 +20,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color(0xff00a97d),
-        fontFamily: GoogleFonts.poppins().fontFamily,
+        fontFamily: GoogleFonts.capriola().fontFamily,
       ),
-      home: SplashScreen(),
+      home: Tabs(currentTab1: 0,),
     );
   }
 }
